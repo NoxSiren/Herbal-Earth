@@ -30,6 +30,16 @@ Recipe.init(
 				model: 'user',
 				key: 'id',
 			}
+		},
+		isFood: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+			primaryKey: true,
+		},
+		isDrink:{
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+			primaryKey: true,
 		}
 	},
 	{

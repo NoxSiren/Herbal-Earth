@@ -4,7 +4,7 @@ require('dotenv').config();
 const express = require('express');
 // const exphbs = require('express-session');
 // const session = require('express-session');
-// const routes = require('./routes');
+const routes = require('./routes');
 const sequelize = require('./config');
 
 //Creating Port connection
