@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "herbalearth",
-=======
   "name": "herbal_earth",
->>>>>>> 86dd3ef7f712dafc1dcdd051522794cb65417004
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
