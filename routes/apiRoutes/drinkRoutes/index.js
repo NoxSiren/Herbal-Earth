@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
-const Recipes = require ('../../../models/Recipes');
+const Recipes = require ('../../../models/Recipe');
 
-router.get('/:isDrink', async (req, res) => {
+router.get('/:drink', async (req, res) => {
     try{
-        const drink = await Recipes.findAll();
+        const drink = await Recipes.findByPk(req.params.drink);
         res.status(200).json(drink);
     }catch (e){
         res.status(404).json(e);

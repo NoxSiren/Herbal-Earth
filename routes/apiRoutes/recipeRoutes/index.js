@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Recipe}= require('../../models/Recipe');
+const {Recipe}= require('../../../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -10,6 +10,14 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:')
+router.post('/', async(req, res)=>{
+    const {name, description, ingredients, food, drink} = req.body;
+    try{
+        const result = await Recipe.create({name, description, ingredients, food, drink});
+        res.json(result);
+    }catch(e){
+        res.json(e);
+    }
+});
 
 module.exports = router;
