@@ -12,7 +12,7 @@ module.exports = {
 					userId: req.session.user.id,
 				}
 			});      //from models
-			res.render('todos', {
+			res.render('Recipe', {
 				userTodos: userTodosData.map(userTodo => userTodo.get({ plain: true })),
 				user: req.session.user,
 			});
