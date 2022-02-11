@@ -37,7 +37,7 @@ Recipe.init(
 			defaultValue: false,
 			primaryKey: true,
 		},
-		drink:{
+		drinks:{
 			type: DataTypes.BOOLEAN,
 			defaultValue: false,
 			primaryKey: true,

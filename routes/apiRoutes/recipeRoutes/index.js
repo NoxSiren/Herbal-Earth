@@ -11,10 +11,9 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async(req, res)=>{
-    const {name, description, ingredients, food, drink} = req.body;
     try{
-        const result = await Recipe.create({name, description, ingredients, food, drink});
-        res.json(result);
+        const newRecipe = await Recipe.create(req.body);
+        res.json(newRecipe);
     }catch(e){
         res.json(e);
     }
