@@ -15,7 +15,7 @@ module.exports = {
 			res.json(e);
 		}
 	},
-//	getting users
+//getting users
 	renderHomePage: async (req, res) => {
             //from handlebars
 		res.render('homepage');
@@ -31,7 +31,7 @@ module.exports = {
 		try {
 			const userData = await User.findByPk(req.params.userId);
 			const user = userData.get({ plain: true });
-		  //singleUser.handlebars
+		        //singleUser.handlebars
             res.render('singleUser', {
 				user,
 				visitCount: req.session.visitCount,
@@ -82,7 +82,7 @@ module.exports = {
 				req.session.loggedIn = true;
 				req.session.user = user;
                            //from models
-				res.redirect('/dashboard');
+				res.redirect('/Recipe');
 			});
 		} catch (e) {
 			res.json(e);
@@ -91,14 +91,14 @@ module.exports = {
 	loginView: (req, res) => {
 		if (req.session.loggedIn) {
                             //from models
-			return res.redirect('/todos');
+			return res.redirect('/Recipe');
 		}       //'login.handlebars'
 		res.render('login');
 	},
 	signupView: (req, res) => {
 		if (req.session.loggedIn) {
                             //from models
-			return res.redirect('/todos');
+			return res.redirect('/Recipe');
 		}      //signup.handlebars
 		res.render('signUp');
 	},
