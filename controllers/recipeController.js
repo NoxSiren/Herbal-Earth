@@ -7,12 +7,20 @@ module.exports = {
 			return res.redirect('');
 		}
 		try {
+<<<<<<< HEAD
 			const userRecipeData = await Todo.findAll({
+=======
+			const userRecipeData = await Recipe.findAll({
+>>>>>>> 2936d2e00b05d11455b059e535311c2858724c26
 				where: {
 					userId: req.session.user.id,
 				}
 			});      //from models
+<<<<<<< HEAD
 			res.render('dashboard', {
+=======
+			res.render('recipes', {
+>>>>>>> 2936d2e00b05d11455b059e535311c2858724c26
 				userRecipe: userRecipeData.map(userRecipe => userRecipe.get({ plain: true })),
 				user: req.session.user,
 			});
@@ -20,14 +28,14 @@ module.exports = {
 			res.json(e);
 		}
 	},
-	createTodo: async (req, res) => {
-		const { task } = req.body;
+	createRecipe: async (req, res) => {
+		const { description } = req.body;
 		try {
-			const newTodo = await Todo.create({
-				task,
+			const newRecipe = await Recipe.create({
+				description,
 				userId: req.session.user.id,
 			});
-			res.json({ newTodo });
+			res.json({ newRecipe });
 		} catch (e) {
 			res.json(e);
 		}

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Welcome!</a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                {{!-- add links --}}
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Food Recipes</a>
+                <a class="nav-link" href="#">Drink Recipes</a>
+                <button type="button" class="btn btn-primary me-3">Sign Out
+                </button>
+
+            </div>
+        </div>
+    </div>
+</nav>
+<header>
+    <div class="p-5 text-center bg-light">
+        <h1 class="mb-3">{{User}}'s Dashboard</h1>
+        <h4 class="mb-3">Herbal Earth</h4>
+    </div>
+</header>
+<form>
+    <label for="newRecipeField" class="form-label">New Recipe!</label>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Name:</span>
+        <input type="text" class="form-control" aria-label="recipe name" aria-describedby="inputGroup-sizing-default" />
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+        <input type="text" class="form-control" aria-label="recipe description"
+            aria-describedby="inputGroup-sizing-default" />
+    </div>
+
+    <div class="input-group input-group-lg">
+        <span class="input-group-text" id="inputGroup-sizing-default">Ingredients:</span>
+        <input type="text" class="form-control" aria-label="recipe ingredients"
+            aria-describedby="inputGroup-sizing-default" />
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" />
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+    </div>
+    <button type="submit" class="btn btn-primary" id="addRecipeBtn">Add Recipe</button>
+</form>
+
+
+
+<div class="card-group">
+    {{#each userRecipe as |recipe| }}
+    {{#if recipe.completed}}
+    <div class="g-col-6 g-col-md-4">{{recipe.task}}</div>
+    {{/if}}
+</div>
