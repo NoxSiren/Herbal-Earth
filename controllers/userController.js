@@ -1,13 +1,12 @@
-const {	User} = require('../models');
+const {User} = require('../models');
 module.exports = {
 	createUser: async (req, res) => {
-		const { username, email, password } = req.body;
-		if (!username || !email || !password ) {
+		const { email, password } = req.body;
+		if (!email || !password ) {
 			return res.status(400).json({ error: 'You must provide an email and password'});
 		}
 		try {
 			const user = await User.create({
-				username,
 				email,
 				password,
 			});
@@ -72,11 +71,10 @@ module.exports = {
 		}
 	},
 	signupHandler: async (req, res) => {
-		const { email, username, password } = req.body;
+		const { email, password } = req.body;
 		try {
 			const createdUser = await User.create({
 				email,
-				username,
 				password,
 			});
 			const user = createdUser.get({ plain: true });
@@ -84,7 +82,7 @@ module.exports = {
 				req.session.loggedIn = true;
 				req.session.user = user;
                            //from models
-				res.redirect('/todos');
+				res.redirect('/dashboard');
 			});
 		} catch (e) {
 			res.json(e);

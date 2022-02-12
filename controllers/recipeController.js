@@ -1,19 +1,19 @@
-const { Todo } = require('../models');
+const { Recipe } = require('../models');
 module.exports = {
-	getAllTodos: async (req, res) => {
+	getAllRecipes: async (req, res) => {
 		if (!req.session.loggedIn) {
 
                         //'login.handlebars'
 			return res.redirect('');
 		}
 		try {
-			const userTodosData = await Todo.findAll({
+			const userRecipeData = await Todo.findAll({
 				where: {
 					userId: req.session.user.id,
 				}
 			});      //from models
-			res.render('todos', {
-				userTodos: userTodosData.map(userTodo => userTodo.get({ plain: true })),
+			res.render('dashboard', {
+				userRecipe: userRecipeData.map(userRecipe => userRecipe.get({ plain: true })),
 				user: req.session.user,
 			});
 		} catch (e) {
