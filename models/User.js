@@ -8,10 +8,6 @@ User.init(
 			defaultValue: UUIDV4,
 			primaryKey: true,
 		},
-		username: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
 		email: {
 			type: DataTypes.STRING,
 			allowNull: false,
@@ -32,7 +28,7 @@ User.init(
 		sequelize,
 		timestamps: false,
 		freezeTableName: true,
-		modelName: 'user',
+		modelName: 'User',
 	}
 );
 module.exports = User;

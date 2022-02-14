@@ -4,7 +4,7 @@ require('dotenv').config();
 const express = require('express');
 // const exphbs = require('express-session');
 // const session = require('express-session');
-// const routes = require('./routes');
+const routes = require('./routes');
 const sequelize = require('./config');
 
 //Creating Port connection
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(session(sessionSettings));
-// app.use(routes);
+app.use(routes);
 
 sequelize.sync({force: true}).then(()=>{
     app.listen(PORT, ()=> console.log(`Server listening on ${PORT}`))

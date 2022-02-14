@@ -9,27 +9,38 @@ Recipe.init(
             autoIncrement: true,
 			primaryKey: true,
 		},
-		recipeName: {
+		name: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		recipeDescription: {
+		description: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-        recipeIngredients: {
+        ingredients: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        recipeImage: {
-            type: DataTypes.STRING,
-        },
+        // image: {
+        //     type: DataTypes.STRING,
+		// 	allowNull: false,
+        // },
 		userId: {
 			type: DataTypes.UUID,
-			references: {
-				model: 'user',
-				key: 'id',
-			}
+			// references: {
+			// 	model: 'User',
+			// 	key: 'id',
+			// }
+		},
+		food: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+			primaryKey: true,
+		},
+		drinks:{
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+			primaryKey: true,
 		}
 	},
 	{
