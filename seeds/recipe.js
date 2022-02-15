@@ -1,5 +1,3 @@
-
-
 const recipes = [{
     name: 'Tumeric Tea',
     description: 'Soothe a sore throat',
