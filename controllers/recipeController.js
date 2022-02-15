@@ -12,13 +12,8 @@ module.exports = {
 					userId: req.session.user.id,
 				}
 			});      //from models
-<<<<<<< HEAD
-			res.render('Recipe', {
-				userTodos: userTodosData.map(userTodo => userTodo.get({ plain: true })),
-=======
 			res.render('recipes', {
 				userRecipe: userRecipeData.map(userRecipe => userRecipe.get({ plain: true })),
->>>>>>> 2936d2e00b05d11455b059e535311c2858724c26
 				user: req.session.user,
 			});
 		} catch (e) {
