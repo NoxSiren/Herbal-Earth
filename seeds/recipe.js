@@ -21,12 +21,14 @@ const recipes = [{
 {
     name: 'Chamomile Tea',
     description: 'Help fall asleep',
+
     ingredients: 'Fresh water, Chamomile leaves',
     drink: true
 },
 {
     name: 'Green Tea',
     description: 'Energize',
+
     ingredients: 'Fresh water, Raw sugar, Green tea leaves',
     drink: true
 
@@ -50,9 +52,19 @@ const recipes = [{
     food: true
 }, 
 {
-    name: 'Butter Sage Pasta',
-    description: 'Boost insulin and reduce blood sugar',
-    herbalIngredients: 'Sage leaves',
+    name: 'Chicken Tortilla Soup',
+    description: 'Anti-infamitory',
+    herbalIngredients: 'Cayenne Pepper', 'Cilantro',
+    food: true
+},{
+    name: 'Cinnamon Apple Chips',
+    description: 'High fiber and reduce heartburn',
+    herbalIngredients: 'Cinnamon', 'Apples',
+    food: true
+},{
+    name: 'Cilantro Lime Shrimp',
+    description: 'Fight Bacteria',
+    herbalIngredients: 'Cilantro', 'Cayenne',
     food: true
 }, 
 {
@@ -62,4 +74,5 @@ const recipes = [{
     food: true
 },
 ];
+
 
