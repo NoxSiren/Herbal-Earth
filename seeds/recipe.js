@@ -54,17 +54,17 @@ const recipes = [{
 {
     name: 'Chicken Tortilla Soup',
     description: 'Anti-infamitory',
-    herbalIngredients: 'Cayenne Pepper', 'Cilantro',
+    herbalIngredients: 'Cayenne Pepper, Cilantro',
     food: true
 },{
     name: 'Cinnamon Apple Chips',
     description: 'High fiber and reduce heartburn',
-    herbalIngredients: 'Cinnamon', 'Apples',
+    herbalIngredients: 'Cinnamon, Apples',
     food: true
 },{
     name: 'Cilantro Lime Shrimp',
     description: 'Fight Bacteria',
-    herbalIngredients: 'Cilantro', 'Cayenne',
+    herbalIngredients: 'Cilantro, Cayenne',
     food: true
 }, 
 {
