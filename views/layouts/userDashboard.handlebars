@@ -7,7 +7,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                {{!-- add links --}}
+                {{!-- add links to href --}}
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                 <a class="nav-link" href="#">Food Recipes</a>
                 <a class="nav-link" href="#">Drink Recipes</a>
@@ -51,7 +51,7 @@
 </form>
 
 
-
+{{!-- make sure we have paths correct to render the cards on user dashboard --}}
 <div class="card-group">
     {{#each userRecipe as |recipe| }}
     {{#if recipe.completed}}
