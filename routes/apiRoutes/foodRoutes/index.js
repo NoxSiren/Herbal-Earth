@@ -1,13 +1,9 @@
 const router = require('express').Router();
-const {Recipe} = require('../../../models');
 
-router.get('/:food', async (req, res) => {
-    try {
-        const foods = await Recipe.findByPk(req.params.food);
-        res.status(200).json(foods);
-    } catch (e) {
-        res.status(404).json(e);
-    }
-});
+const{
+    getAllFood,
+}= require('../../../controllers/homePageController');
 
-module.exports = router
+router.get('/', getAll);
+
+module.exports = router;

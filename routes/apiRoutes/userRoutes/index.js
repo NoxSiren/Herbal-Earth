@@ -16,10 +16,5 @@ router.post('/logout', logout);
 
 router.route('/:userId')
 	.get(getUserById);
-// /api/users/:userId
-// router.route('/:userId')
-// 	.delete(deleteUserById)
-// 	.get(getUserById)
-// 	.put(updateUserById)
-module.exports = router;
 
+module.exports = router;

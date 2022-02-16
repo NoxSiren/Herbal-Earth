@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const recipeRoutes= require('./recipeRoutes');
-const foodRoutes = require('./foodRoutes');
-const drinkRoutes = require('./drinkRoutes');
-// const userRoutes= require('./userRoutes');
 
-router.use('/recipes', recipeRoutes);
-router.use('/foods', foodRoutes);
+const drinkRoutes = require('./drinkRoutes');
+const foodRoutes = require('./foodRoutes');
+const recipeRoutes = require('./dashboardRoutes');
+const userRoutes = require('./userRoutes');
+
 router.use('/drinks', drinkRoutes);
-// router.use('/userRoutes', userRoutes);
+router.use('/food', foodRoutes);
+router.use('/dashboard', recipeRoutes);
+router.use('./user', userRoutes);
 
 module.exports = router;
