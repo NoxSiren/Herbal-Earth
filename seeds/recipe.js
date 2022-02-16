@@ -67,7 +67,7 @@ const recipes = [{
 }, 
 {
     name: 'Molasses Clove Cookies',
-    description: 'Antioxidant and Anti-infamitory',
+    description: 'Antioxidant and Anti-inflamitory',
     herbalIngredients: 'Cloves, Cinnamon',
     food: true
 },
