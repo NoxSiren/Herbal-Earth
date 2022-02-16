@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const apiRoutes= require('./apiRoutes');
 const {renderHomePage, getAllRecipes, getAllDrinks, getAllFood}= require('../controllers/homePageController')
-const {renderHomePage,loginView, signupView} = require('../controllers/userController');
+const {loginView, signupView} = require('../controllers/userController');
 const {getUserRecipes}= require('../controllers/dashboardController');
 
 router.get('/', renderHomePage, getAllRecipes);
