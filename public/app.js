@@ -1,21 +1,18 @@
-const $email = document.querySelector('#email');
-const $password = document.querySelector('#password');
-const $login = document.querySelector('#login');
-$login.addEventListener('click', async function (event) {
-    event.preventDefault();
-    console.log($password.value);
-    try {
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                email: $email.value,
-                password: $password.value,
-            })
+$(document).ready(function(){
+    const emailField = $('#emailField');
+    const passwordField= $('#passwordField');
+    const signinBtn = $('#signinBtn');
+    const logoutBtn = $('#logoutBtn');
+    signinBtn.on('click', async function(event){
+        event.preventDefault();
+        await $.post('/api/home/login', {
+            email: emailField.val().trim(),
+            password: passwordField.val().trim,
         });
-        const data = await response.json();
-        window.location.reload();
-    } catch (e) {
-        console.log(e);
-    }
+        window.location.href = '/dashboard';
+    });
+    logoutBtn.on('click', async function(){
+        await $.post('/api/users/logout');
+        window.location.href = '/';
+    });
 });
