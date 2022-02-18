@@ -65,7 +65,7 @@ module.exports = {
         if (req.session.loggedIn){
             return res.redirect('/dashboard');
         }
-        res.render('/partials/signup');
+        res.render('partials/signup');
     },
     logout: (req, res)=>{
         req.session.destroy(()=>{
