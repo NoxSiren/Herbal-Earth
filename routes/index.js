@@ -8,8 +8,8 @@ router.get('/', renderHomePage, getAllRecipes);
 router.get('/drinks', getAllDrinks);
 router.get('/food', getAllFood);
 router.get('/dashboard', getUserRecipes);
-router.get('/login', loginView);
-router.get('signup', signupView);
+router.get('/signin', loginView);
+router.get('/signup', signupView);
 router.get('/api', apiRoutes);
 
 module.exports = router;

@@ -4,6 +4,7 @@ module.exports={
     renderHomePage: async (req, res) => {
         res.render('homepage');
     }, 
+    // add on click function to reroute
     getAllRecipes: async (req, res) => {
         try {
             const getAllRecipes = await Recipe.findAll(req.body.recipes);
@@ -12,6 +13,7 @@ module.exports={
             res.json(e);
         }
     }, 
+    // seperate controller for drinks
     getAllDrinks: async (req,res)=>{
         try {
             const getAllDrinks = await Recipe.findByPk(req.params.drink);
