@@ -1,21 +1,25 @@
 //get user model
 const {User}= require('../models');
 
-module.exports={
-    renderHomePage: async (req, res) => {
-        res.render('homepage');
-    }, 
-    // add on click function to reroute
-    getAllRecipes: async (req, res) => {
+
+module.exports = {
+    //create new user
+    createUser: async (req, res) => {
+        const {email, password} = req.body;
+        if (!email || !password){
+            return res.status(400),json({error: 'You must provide an email and password'});
+        }
         try {
             const user = await User.create({email, password});
             res.json(user);
         } catch (e) {
             res.json(e)
         }
+    },
+    renderHomePage: async (req, res) => {
+        res.render('homepage');
     }, 
-    // seperate controller for drinks
-    getAllDrinks: async (req,res)=>{
+    login: async (req, res) => {
         try {
             const userData = await User.findOne({
                 where:{
@@ -43,6 +47,7 @@ module.exports={
                 req.session.loggedIn=true;
                 req.session.user= user;
                 res.redirect('/dashboard');
+
             })
         } catch (e) {
             res.json(e);
@@ -54,13 +59,13 @@ module.exports={
         if(req.session.loggedIn){
             return res.redirect('/dashboard');
         }
-        res.render('login');
+        res.render('partials/login');
     },
     signupView: (req, res) => {
         if (req.session.loggedIn){
             return res.redirect('/dashboard');
         }
-        res.render('signUp');
+        res.render('partials/signup');
     },
     logout: (req, res)=>{
         req.session.destroy(()=>{

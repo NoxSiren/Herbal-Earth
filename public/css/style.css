@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(123, 172, 50);
+}
+
+header {
+    background-color: rgb(123, 172, 50);
+}
+
+
+.card {
+    margin-top: 25px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: green;
+    border-width: 5px;
+}
+
+.card-img-top {
+    border-top-left-radius: 50px; 
+    border-top-right-radius: 50px; 
+}
+
+.recipebtn {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: inline;
+}
+
