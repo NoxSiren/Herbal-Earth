@@ -8,6 +8,7 @@ header {
 
 
 .card {
+    margin-left: 25px;
     margin-top: 25px;
     border-radius: 50px;
     border-style: solid;
