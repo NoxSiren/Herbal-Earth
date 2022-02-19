@@ -16,12 +16,12 @@ https://imgur.com/gallery/EkwCztu
 ### Authors
 Thom Le
 - https://github.com/thomle0418
-- 
+
 David Gavino
 - https://github.com/CodeDavid09
-- 
+
 Jaki Hawker
 - https://github.com/NoxSiren
-- 
+
 Lucero Rivas
 - https://github.com/Lucero1027
