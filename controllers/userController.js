@@ -57,7 +57,7 @@ module.exports = {
     //if not, return to login page 
     loginView: (req, res) => {
         if(req.session.loggedIn){
-            return res.redirect('/dashboard');
+            return res.redirect('views/dashboard');
         }
         res.render('partials/login');
     },
@@ -65,7 +65,7 @@ module.exports = {
         if (req.session.loggedIn){
             return res.redirect('/dashboard');
         }
-        res.render('/partials/signup');
+        res.render('partials/signup');
     },
     logout: (req, res)=>{
         req.session.destroy(()=>{
