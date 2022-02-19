@@ -4,6 +4,6 @@ const {
     getAllFood,
 }= require('../../../controllers/homePageController');
 
-router.get('/', getAllFood);
+router.get('/food', getAllFood);
 
 module.exports = router;
