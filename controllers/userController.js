@@ -2,7 +2,6 @@
 const {User}= require('../models');
 
 
-
 module.exports = {
     //create new user
     createUser: async (req, res) => {
@@ -20,25 +19,6 @@ module.exports = {
     renderHomePage: async (req, res) => {
         res.render('homepage');
     }, 
-    getUserById: async (req, res) => {
-        req.session.save(()=>{
-            if (req.session.visitCount){
-                req.session.visitCount++;
-            }else{
-                req.session.visitCount = 1;
-            }
-        });
-        try{
-            const userData = await User.findByPk(req.params.userId);
-            const user = userData.get({plain : true});
-            res.render('dashboard',{
-                user,
-                visitCount: req.session.visitCount,
-            });
-        }catch (e) {
-            res.json(e);
-        }
-    },
     login: async (req, res) => {
         try {
             const userData = await User.findOne({
@@ -67,6 +47,7 @@ module.exports = {
                 req.session.loggedIn=true;
                 req.session.user= user;
                 res.redirect('/dashboard');
+
             })
         } catch (e) {
             res.json(e);
@@ -78,13 +59,13 @@ module.exports = {
         if(req.session.loggedIn){
             return res.redirect('/dashboard');
         }
-        res.render('login');
+        res.render('partials/login');
     },
     signupView: (req, res) => {
         if (req.session.loggedIn){
             return res.redirect('/dashboard');
         }
-        res.render('signUp');
+        res.render('/partials/signup');
     },
     logout: (req, res)=>{
         req.session.destroy(()=>{

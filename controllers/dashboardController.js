@@ -1,6 +1,10 @@
 const {Recipe}= require('../models');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
+    renderHomePage: async (req, res) => {
+        res.render('dashboard');
+    }, 
     getUserRecipes: async (req, res)=>{
         if(!req.session.loggedIn){
             return res.redirect('/login');
