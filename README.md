@@ -12,7 +12,7 @@ As full stack devlopers, we wanted to create a website where the user can look u
 #### Screenshots
 https://imgur.com/gallery/EkwCztu
 #### Deployment link:
-- https://aqueous-fjord-36051.herokuapp.com/
+https://aqueous-fjord-36051.herokuapp.com/
 ### Authors
 Thom Le
 - https://github.com/thomle0418
