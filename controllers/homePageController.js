@@ -11,6 +11,7 @@ module.exports={
             res.json(user);
         } catch (e) {
             res.json(e)
+            
         }
     }, 
     // seperate controller for drinks
