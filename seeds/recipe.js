@@ -5,7 +5,7 @@ const recipes = [{
     drink: true
 },
 {
-    name: 'Ginger Tea',
+    name: 'Ginger Tea leaves',
     description: 'Stomach relief',
     ingredients: 'Fresh water, Ginger slice',
     drink: true
