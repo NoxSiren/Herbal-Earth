@@ -1,5 +1,6 @@
-body {
-    background-color: rgb(123, 172, 50);
+h1{
+    color:rgb(63, 107, 65);
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 header {
@@ -8,11 +9,13 @@ header {
 
 
 .card {
+    margin-left: 25px;
     margin-top: 25px;
     border-radius: 50px;
     border-style: solid;
-    border-color: green;
+    border-color: rgb(133, 185, 153);
     border-width: 5px;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .card-img-top {
@@ -20,9 +23,16 @@ header {
     border-top-right-radius: 50px; 
 }
 
+<<<<<<< HEAD
+.recipebtn{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: Black;
+    background-color :rgb(202, 226, 204)
+=======
 .recipebtn {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     display: inline;
+>>>>>>> 4aa22910abad326124e11dd2a432797ac02ed319
 }
-
