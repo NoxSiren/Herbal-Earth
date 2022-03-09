@@ -12,4 +12,4 @@ router.get('/signin', loginView);
 router.get('/signup', signupView);
 router.get('/api', apiRoutes);
 
-module.exports = router;
+module.exports= router;

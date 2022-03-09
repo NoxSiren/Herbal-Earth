@@ -1,4 +1,5 @@
-const {Recipe}= require('../models');
+//get user model
+const {User}= require('../models');
 
 module.exports={
     renderHomePage: async (req, res) => {
@@ -6,29 +7,63 @@ module.exports={
     }, 
     getAllRecipes: async (req, res) => {
         try {
-            const getAllRecipes = await Recipe.findAll(req.body.recipes);
-            res.json(getAllRecipes);
+            const user = await User.create({email, password});
+            res.json(user);
         } catch (e) {
-            res.json(e);
+            res.json(e)
         }
     }, 
     // seperate controller for drinks
     getAllDrinks: async (req,res)=>{
         try {
-            const getAllDrinks = await Recipe.findByPk(req.params.drink);
-            const drinks = getAllDrinks.get({plain:true});
-            res.render('drinksPage', {drinks});
+            const userData = await User.findOne({
+                where:{
+                    email: req.body.email
+                }
+            });
+            const userFound = userData.get({plain:true});
+            if (userFound.password === req.body.password){
+                req.session.save(()=>{
+                    req.session.loggedIn=true;
+                    req.session.user= userFound;
+                    req.json({success: true});
+                });
+            }
         } catch (e) {
             res.json(e);
         }
-    }, 
-    getAllFood: async (req,res)=>{
+    },
+    signupHandler: async (req, res) => {
+        const {email, password} = req.body;
         try {
-            const getAllFood= await Recipe.findByPk(req.params.food);
-            const food = getAllFood.get({plain:true});
-            res.render('foodPage', {food});
+            const createdUser = await User.create({email, password});
+            const user = createdUser.get({plain:true});
+            req.session.save(()=>{
+                req.session.loggedIn=true;
+                req.session.user= user;
+                res.redirect('/dashboard');
+            })
         } catch (e) {
             res.json(e);
         }
-    }
+    },
+    //if user is logged in, go to dashboard
+    //if not, return to login page 
+    loginView: (req, res) => {
+        if(req.session.loggedIn){
+            return res.redirect('/dashboard');
+        }
+        res.render('login');
+    },
+    signupView: (req, res) => {
+        if (req.session.loggedIn){
+            return res.redirect('/dashboard');
+        }
+        res.render('signUp');
+    },
+    logout: (req, res)=>{
+        req.session.destroy(()=>{
+            res.send({status:true});
+        });
+    },
 }

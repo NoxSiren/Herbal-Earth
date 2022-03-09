@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	const emailField = $('#emailField');
-	const usernameField = $('#usernameField');
 	const passwordField = $('#passwordField');
 	const signupBtn = $('#signupBtn');
 	signupBtn.on('click', async function(event) {
