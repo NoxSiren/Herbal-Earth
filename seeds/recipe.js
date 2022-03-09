@@ -21,7 +21,7 @@ const recipes = [{
     description: 'Help fall asleep',
 
     ingredients: 'Fresh water, Chamomile leaves',
-    drink: true
+    drink: false
 },
 {
     name: 'Green Tea',
