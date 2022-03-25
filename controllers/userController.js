@@ -39,6 +39,7 @@ module.exports = {
         }
     },
     signupHandler: async (req, res) => {
+        console.log('signupHandler')
         const {email, password} = req.body;
         try {
             const createdUser = await User.create({email, password});

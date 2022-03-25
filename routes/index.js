@@ -10,6 +10,6 @@ router.get('/food', getAllFood);
 router.get('/dashboard', getUserRecipes);
 router.get('/signin', loginView);
 router.get('/signup', signupView);
-router.get('/api', apiRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;
