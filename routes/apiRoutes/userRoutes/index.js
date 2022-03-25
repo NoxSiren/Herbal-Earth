@@ -6,8 +6,7 @@ const {
 	logout,
 } = require('../../../controllers/userController');
 // /api/users
-router.route('/')
-	.post(signupHandler);
+
 
 router.post('/signup', signupHandler);
 router.post('/login', login);

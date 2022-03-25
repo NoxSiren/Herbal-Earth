@@ -8,5 +8,5 @@ const emailField = $('#emailField');
 			email: emailField.val().trim(),
 			password: passwordField.val().trim(),
 		});
-		window.location.href = '/recipe';
+		window.location.href = '/dashboard';
 	});
